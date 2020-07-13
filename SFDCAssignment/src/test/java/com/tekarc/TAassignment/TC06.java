@@ -1,6 +1,8 @@
 package com.tekarc.TAassignment;
 
-
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -8,18 +10,18 @@ import java.util.Date;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TC06{
+public class TC06 {
 
 	static WebDriver driver;
 	static ExtentReports reports;
@@ -43,7 +45,7 @@ public class TC06{
 		return imagePath;
 	}
 
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args) throws InterruptedException, IOException, AWTException {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		InitializationReport();
@@ -68,11 +70,48 @@ public class TC06{
 		driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("bindra");
 		driver.findElement(By.xpath("//input[contains(@class,'zen-btn zen-primaryBtn zen-pas')]")).click();
 
-		driver.findElement(By.xpath("//span[contains(@class,'publisherattachtext')][contains(text(),'Post')]")).click();
+		WebElement postlink=driver.findElement(By.xpath("//span[contains(@class,'publisherattachtext')][contains(text(),'Post')]"));
+		postlink.click();
+		Thread.sleep(2000L);
+		 Robot r2=new Robot();
+		for(int i=0;i<4;i++) {
+			r2.keyPress(KeyEvent.VK_TAB);
+			r2.keyRelease(KeyEvent.VK_TAB);
+			r2.delay(1000);
+		}
 		
-		logger.log(LogStatus.PASS, "Test TC06 is passed");
-		driver.findElement(By.xpath("//span[contains(@class,'publisherattachtext')][contains(text(),'File')]")).click();
-		driver.findElement(By.xpath("//td[@id='chatterUploadFileActionPanel']/a")).click();
+		for(int i=0;i<4;i++) {
+			r2.keyPress(KeyEvent.VK_SHIFT);
+			r2.keyPress(KeyEvent.VK_I);
+			r2.keyPress(KeyEvent.VK_SPACE);
+			r2.keyPress(KeyEvent.VK_A);
+			r2.keyPress(KeyEvent.VK_M);
+	        r2.keyRelease(KeyEvent.VK_SHIFT);
+		}
+		Thread.sleep(2000L);
+		WebElement sharepost=driver.findElement(By.xpath("//input[@id='publishersharebutton']"));
+		sharepost.click();
+		Thread.sleep(2000L);
+		WebElement fileClick=driver.findElement(By.xpath("//span[contains(@class,'publisherattachtext')][contains(text(),'File')]"));
+		fileClick.click();
+		
+		WebElement chooseFcomp=driver.findElement(By.xpath("//td[@id='chatterUploadFileActionPanel']/a"));
+		Thread.sleep(3000L);
+		chooseFcomp.click();
+		    r2.keyPress(KeyEvent.VK_TAB);
+		    r2.delay(1000);
+			r2.keyPress(KeyEvent.VK_TAB);
+			r2.delay(1000);
+			r2.keyPress(KeyEvent.VK_ENTER);
+			r2.delay(1000);
+			r2.keyRelease(KeyEvent.VK_ENTER);
+			
+		Thread.sleep(2000L);
+		Runtime.getRuntime().exec("C://Users/annur/OneDrive/Desktop/autoituploadfile.exe");
+		Thread.sleep(2000L);
+		WebElement share=driver.findElement(By.cssSelector("#publishersharebutton"));
+		Thread.sleep(2000L);
+		share.click();
 		Thread.sleep(3000L);
 		driver.close();
 		reports.endTest(logger);
