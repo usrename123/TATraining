@@ -1,22 +1,18 @@
 package com.TekArc.Framework.Utilities;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.apache.commons.io.FileUtils;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
-import java.io.File;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestNGListener;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
-
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
@@ -55,7 +51,7 @@ public class TestBase  {
     CommonUtilities.loadPropertyFiles(
         System.getProperty("user.dir") + "\\src\\main\\java\\com\\TekArc\\Framework\\Configrations\\config.properties");
 
-    driver = oBroUti.launchBrowser(System.getProperty("Browser"));
+    driver = BrowerUtilities.launchBrowser(System.getProperty("Browser"));
 
     InitializeReport();
   }

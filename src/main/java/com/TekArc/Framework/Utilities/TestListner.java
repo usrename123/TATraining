@@ -1,6 +1,8 @@
 package com.TekArc.Framework.Utilities;
 
 
+import java.io.IOException;
+
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -39,7 +41,12 @@ public class TestListner extends TestBase implements ITestListener {
   @Override
   public synchronized void onTestFailure(ITestResult result) {
     System.out.println("onTestFailure called");
-    logger.log(LogStatus.FAIL, result.getMethod().getMethodName() + " Failed");
+    try {
+      logger.log(LogStatus.FAIL, result.getMethod().getMethodName() + logger.addScreenCapture(takeScreenshot()));
+    } catch (IOException e) {
+      
+      e.printStackTrace();
+    }
     // Add screenshots
     reports.endTest(logger);
   }
