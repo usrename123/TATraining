@@ -28,7 +28,7 @@ public class TestBase {
   public static ExtentReports reports;
   public static ExtentTest logger;
 
-  public static void InitializeReport() {
+  public  void InitializeReport() {
     System.out.println(System.getProperty("user.dir") + "/report/");
     // reports= new ExtentReports(System.getProperty("user.dir") +
     // "/report/myreport.html", true);
@@ -47,10 +47,13 @@ public class TestBase {
   }
 
   @BeforeSuite
-  public static void InitializeDependencies() throws Exception {
+  public void InitializeDependencies() throws Exception {
     System.out.println(System.getProperty("user.dir"));
     CommonUtilities.loadPropertyFiles(
         System.getProperty("user.dir") + "\\src\\main\\java\\com\\TekArc\\Framework\\Configrations\\config.properties");
+
+    oCommUtil.loadLog4jProperty(
+        System.getProperty("user.dir") + "\\src\\main\\java\\com\\TekArc\\Framework\\Configrations\\log4j.properties");
 
     driver = BrowerUtilities.launchBrowser(System.getProperty("Browser"));
 
