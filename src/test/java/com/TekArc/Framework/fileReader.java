@@ -16,7 +16,7 @@ public class fileReader {
 			e.printStackTrace();
 		}
 		
-		System.out.println(prop.getProperty("url"));
+		System.out.println(prop.getProperty("ExcelDataFileName"));
 
 	}
     

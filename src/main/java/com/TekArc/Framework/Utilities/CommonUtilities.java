@@ -12,13 +12,13 @@ Will be used from here
 
 public class CommonUtilities {
 
-  Logger log = Logger.getLogger(getClass().getSimpleName());
+   Logger log = Logger.getLogger(getClass().getSimpleName());
 
     static Properties props = new Properties();
    static FileInputStream fileIn = null;
 
-  public static void loadPropertyFiles(String propPath) throws Exception {
-    CommonUtilities.fileIn = new FileInputStream(propPath);
+  public void loadPropertyFiles(String propPath) throws Exception {
+    fileIn = new FileInputStream(propPath);
     System.out.println(System.getProperty(propPath));
     
     props.load(fileIn);
