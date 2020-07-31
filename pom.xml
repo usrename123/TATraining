@@ -150,6 +150,11 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+          <configuration>
+            <suiteXmlFiles>
+              <suiteXmlFile>C:\TecArcTrainning\TAGitHubTraining\Aruna_Bindra\Assignments\SeleniumFrameworkAssignment\src\test\java\com\TekArc\Framework\Resources\RegressionSuite2.xml</suiteXmlFile>
+            </suiteXmlFiles>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
