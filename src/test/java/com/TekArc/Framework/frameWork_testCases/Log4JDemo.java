@@ -24,23 +24,13 @@ public class Log4JDemo extends TestBase {
 		WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
 		username.clear();
 		oBroUti.waitForElementVisible(driver, username, oCons.WAIT_COMMON);
+		
 		oBroUti.ufSendKeys(driver, username, "jack@mithun.com", oCons.WAIT_COMMON);
+		log.trace("username entered successfuly");
 		oBroUti.ufSendKeys(driver, password, "24july1996", oCons.WAIT_COMMON);
-		Pologin.loginTAcc();
-		WebElement errorMassage = driver.findElement(By.xpath("//div[@id='error']"));
-		oBroUti.waitForElementVisible(driver, errorMassage, oCons.WAIT_COMMON);
-		String errmsg = errorMassage.getText();
-		if (errmsg.contains("Please check your username and password. If you still can't log in,"
-				+ " contact your Salesforce administrator.")) {
-			log.info("Error for wrong UserName and PassWrd is validated");
-			
-		}
-    log.trace("My custom Message");
-    log.debug("My custom Message");
-    
-
-    log.error("My custom Message");
-
-    System.out.println("My custom Message");
+		log.info("password entered successfuly");
+	    Pologin.loginTAcc();
+		Pologin.logOutOfApp();
+   
   }
 }
