@@ -20,13 +20,13 @@ public class Log4JDemo extends TestBase {
   @Test
   public void TC1() throws Exception {
     driver.get(oCons.getAppURL());
-		WebElement username = driver.findElement(By.xpath("//input[@id='username']"));
-		WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
+	   WebElement username = driver.findElement(By.xpath("//input[@id='username']"));
+	    WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
 		username.clear();
 		oBroUti.waitForElementVisible(driver, username, oCons.WAIT_COMMON);
 		
 		oBroUti.ufSendKeys(driver, username, "jack@mithun.com", oCons.WAIT_COMMON);
-		log.trace("username entered successfuly");
+		log.info("username entered successfuly");
 		oBroUti.ufSendKeys(driver, password, "24july1996", oCons.WAIT_COMMON);
 		log.info("password entered successfuly");
 	    Pologin.loginTAcc();

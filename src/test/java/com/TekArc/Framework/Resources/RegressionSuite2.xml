@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="RegressionSuite" verbose="1" >
+<suite name="ParallelRun" parallel="classes" thread-count="2">
   
-    <test name="Regression1">
+    <test name="parallel">
     
       <classes>
-        <class name="com.TekArc.Framework.frameWork_testCases.LoginSFDC"/>
-  
+        <class name="com.TekArc.Framework.frameWork_testCases.SFDCtestNg"/>
+        <class name="com.TekArc.Framework.frameWork_testCases.CreatAccTestNg"/>
      
       </classes>
     </test>

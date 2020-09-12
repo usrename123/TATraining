@@ -64,6 +64,7 @@ public class TestBase {
 
   @AfterSuite
   public void ShuttingDownAllDependencies() {
+    driver.close();
     driver.quit();
   }
 

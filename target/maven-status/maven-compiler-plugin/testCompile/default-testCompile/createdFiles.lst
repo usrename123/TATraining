@@ -3,6 +3,8 @@ com\TekArc\Framework\frameWork_testCases\loginTestAutolab.class
 com\TekArc\Framework\PO\PODevelopers_console.class
 com\TekArc\Framework\PO\POMySetting.class
 com\TekArc\Framework\PO\POHome.class
+com\TekArc\Framework\frameWork_testCases\CreatAccTestNg.class
+com\TekArc\Framework\frameWork_testCases\SFDCtestNg.class
 com\TekArc\Framework\fileReader.class
 com\TekArc\Framework\frameWork_testCases\UserMenu.class
 com\TekArc\Framework\frameWork_testCases\Log4JDemo.class

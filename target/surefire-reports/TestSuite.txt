@@ -1,15 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 13.492 s <<< FAILURE! - in TestSuite
-salesforce_TC4B(com.TekArc.Framework.frameWork_testCases.LoginSFDC)  Time elapsed: 0.827 s  <<< FAILURE!
-org.openqa.selenium.ElementNotInteractableException: 
-element not interactable
-  (Session info: chrome=84.0.4147.105)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAPTOP-KTH72RIV', ip: '10.0.0.205', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.8'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\annur\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64041}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 4a626fe9706cee5958729b2301e556e0
-	at com.TekArc.Framework.frameWork_testCases.LoginSFDC.salesforce_TC4B(LoginSFDC.java:68)
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.366 s - in TestSuite
