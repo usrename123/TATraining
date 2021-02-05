@@ -26,11 +26,15 @@ public class Log4JDemo extends TestBase {
 		oBroUti.waitForElementVisible(driver, username, oCons.WAIT_COMMON);
 		
 		oBroUti.ufSendKeys(driver, username, "jack@mithun.com", oCons.WAIT_COMMON);
-		log.info("username entered successfuly");
-		oBroUti.ufSendKeys(driver, password, "24july1996", oCons.WAIT_COMMON);
-		log.info("password entered successfuly");
+		log.info("username jack@mithun.com successfuly");
+		oBroUti.ufSendKeys(driver, password, "24July1996", oCons.WAIT_COMMON);
+		log.info("password 24July1996 entered successfuly");
 	    Pologin.loginTAcc();
 		Pologin.logOutOfApp();
    
+  }
+  @Test
+  public void errorTest(){
+	  log.error("ERROR MESSAGE");
   }
 }

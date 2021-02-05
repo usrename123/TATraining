@@ -41,17 +41,18 @@ public class POLogin extends TestBase {
     @FindBy(xpath = "//input[@id='continue']")
     WebElement Click_continue;
 
-    
+    static  String uservalue="jack@mithun.com";
+    static String pwdvalue="24July1996#";
 
     public void loginToApp() throws Exception {
         oBroUti.waitForElementVisible(driver, username, oCons.WAIT_COMMON);
-        oBroUti.ufSendKeys(driver, username, "jack@mithun.com", oCons.WAIT_COMMON);
+        oBroUti.ufSendKeys(driver, username, uservalue, oCons.WAIT_COMMON);
         if (username.isDisplayed() && username.isEnabled()) {
             System.out.println("usernamefield found");
         } else {
             System.out.println("usernamefield is  not displayed");
         }
-        oBroUti.ufSendKeys(driver, password, "24july1996", oCons.WAIT_COMMON);
+        oBroUti.ufSendKeys(driver, password, pwdvalue, oCons.WAIT_COMMON);
    
     }
 

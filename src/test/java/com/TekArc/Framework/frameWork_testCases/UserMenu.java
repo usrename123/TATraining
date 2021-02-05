@@ -19,13 +19,10 @@ public class UserMenu extends TestBase {
     public void SetupEnvironment() throws Exception {
         poHome = new POHome(driver);
         Pologin = new POLogin(driver);
-        mySetting=new POMySetting(driver);
-        poDevelopersconsole= new PODevelopers_console(driver);
-        
+        mySetting = new POMySetting(driver);
+        poDevelopersconsole = new PODevelopers_console(driver);
 
     }
-
-    
 
     @Test
     public void salesforce_TC6() throws Exception {
@@ -39,8 +36,9 @@ public class UserMenu extends TestBase {
         poHome.fileLinkClick();
 
     }
+
     @Test
-    public void salesforce_TC7() throws Exception{
+    public void salesforce_TC7() throws Exception {
         driver.get(oCons.getAppURL());
         Pologin.loginToApp();
         Pologin.loginTAcc();
@@ -51,8 +49,8 @@ public class UserMenu extends TestBase {
     }
 
     @Test
-    public void salesforce_TC8() throws Exception{
-        
+    public void salesforce_TC8() throws Exception {
+
         driver.get(oCons.getAppURL());
         Pologin.loginToApp();
         Pologin.loginTAcc();
@@ -61,14 +59,14 @@ public class UserMenu extends TestBase {
         Pologin.logOutOfApp();
 
     }
-    
-    @Test
-    public void salesforce_TC9() throws Exception{
-        //Note: Requirment for this test is to run in the firefox browser
-        driver.get(oCons.getAppURL());
-		Pologin.loginToApp();
-		Pologin.loginTAcc();
-		Pologin.logOutOfApp();
 
-}
+    @Test
+    public void salesforce_TC9() throws Exception {
+        // Note: Requirment for this test is to run in the firefox browser
+        driver.get(oCons.getAppURL());
+        Pologin.loginToApp();
+        Pologin.loginTAcc();
+        Pologin.logOutOfApp();
+
+    }
 }

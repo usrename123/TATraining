@@ -9,12 +9,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
@@ -35,7 +33,7 @@ public class TestBase {
     // reports= new ExtentReports(System.getProperty("user.dir") +
     // "/report/myreport.html", true);
     reports = new ExtentReports(System.getProperty("user.dir") + "/report/"
-        + new SimpleDateFormat("'SalesForceReport_'YYYYMMddHHmmss'.html'").format(new Date()));
+        + new SimpleDateFormat("'Test_reports'YYYYMMddHHmmss'.html'").format(new Date()));
   }
 
   public String takeScreenshot() throws IOException {

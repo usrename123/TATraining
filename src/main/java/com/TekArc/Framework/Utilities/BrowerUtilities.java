@@ -96,7 +96,7 @@ public class BrowerUtilities extends TestBase {
 
   public void ufClick(WebDriver driver, WebElement ele, int iTimeInSeconds)
     throws Exception {
-    waitForElementVisible(driver, ele, iTimeInSeconds);
+      waitForElementVisible(driver, ele, iTimeInSeconds);
     ele.click();
   }
 
